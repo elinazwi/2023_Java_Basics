@@ -8,8 +8,8 @@ public class Loops_Aufgabe1 {
 
         int summe = 0;
 
-           for (int zahl = 1; zahl <= 100; zahl++) {
-              summe += zahl;
+           for (int i = 1; i <= 100; i++) {
+              summe += i;
                 }
 
            System.out.println("Die Summe der Zahlen von 1 bis 100 inklusive beträgt: " + summe);
