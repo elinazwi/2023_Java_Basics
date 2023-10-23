@@ -11,11 +11,11 @@ public class Caersar_Verschluesselung {
             // dann zu 65 dazu zählen
             actualCharacter += shift;
 
-            if (actualCharacter>122){
-                actualCharacter =  (char)(97 + shift);
+            if ((actualCharacter>90) && (actualCharacter<97)){
+                actualCharacter = (char)(64 + shift);
 
-            }else if(actualCharacter>90){
-                actualCharacter = (char)(65 + shift);
+            }else if (actualCharacter>122){
+                actualCharacter =  (char)(97 + shift);
             }
 
             result[i]=actualCharacter;
