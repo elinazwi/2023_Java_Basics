@@ -1,19 +1,23 @@
 package at.elina.excercises;
 
-import java.util.Arrays;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Hangman{
     public static void main(String[] args) {
         String[] guessWords = {"elina", "dorotea", "hangman", "test"};
         Hangman game = new Hangman(guessWords);
+
         game.playGame();
     }
 
     public String[] words;
+
+    public String guessedLetters = "";
     public String wordToGuess;
     public String hiddenWord;
-    public Scanner scanner;
+    public static Scanner scanner;
+
 
     public Hangman(String[] words) {
         this.words = words;
@@ -25,6 +29,11 @@ public class Hangman{
     public void selectRandomWord() {
         int index = (int) (Math.random() * words.length);
         wordToGuess = words[index];
+
+    }
+
+    public void printGuessedLetters(){
+        System.out.println(guessedLetters);
     }
 
     public void hideWord() {
@@ -38,10 +47,12 @@ public class Hangman{
     public void playGame() {
         while (true) {
             System.out.println(hiddenWord);
+            printGuessedLetters();
             System.out.println("Gib einen Buchstaben ein:");
             char input = scanner.next().charAt(0);
+            guessedLetters += Character.toString(input);
             uncoverLetter(input);
-            if ((hiddenWord) == (wordToGuess)) {
+            if (Objects.equals(hiddenWord, wordToGuess)) {
                 System.out.println("Herzlichen Glückwunsch! Du hast das Wort erraten!");
                 break;
             }
@@ -53,6 +64,7 @@ public class Hangman{
         for (int i = 0; i < chars.length; i++) {
             if (chars[i] == '*' && wordToGuess.charAt(i) == letter) {
                 chars[i] = letter;
+                System.out.println("Du hast den Buchstaben: " + letter + " geraten");
             }
         }
         hiddenWord = new String(chars);
