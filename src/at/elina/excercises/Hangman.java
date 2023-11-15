@@ -1,114 +1,60 @@
 package at.elina.excercises;
 
-import java.util.Random;
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class Hangman {
-
- /*   public static void main(String[] args) {
-        Random randomNumberGenerator = new Random();
-        boolean isGameRunning = true;
-        String[] words = {"Deutsch"};
-        Scanner scanner = new Scanner(System.in);
-
-        while (isGameRunning) {
-            String randomWord = words[randomNumberGenerator.nextInt(words.length)];
-            boolean isGuessing = true;
-            String visibleLetters = getVisibleLetters;
-
-            printWord(randomWord, visibleLetters);
-            System.out.println();
-
-            while (isGuessing) {
-                System.out.print("Input: ");
-                String input = scanner.nextLine();
-                visibleLetters += input.toLowerCase();
-                printWord(randomWord, visibleLetters);
-                System.out.println();
-                isGuessing = isGameRunning(randomWord, visibleLetters);
-
-            }
-        }
-
-    }
-    public static void printWord (String word) {
-        String[] ListOfWords = word.split("");
-        for (String character : ListOfWords) {
-            if (visibleLetters.contains(character.toLowerCase())) {
-                System.out.print(character);
-            } else {
-                System.out.print("*");
-
-            }
-        }
-    }
-
-} */
-
+public class Hangman{
     public static void main(String[] args) {
-        Random randomNumberGenerator = new Random();
-        boolean isGameRunning = true;
-        String[] words = {"Mathe", "Deutsch", "Englisch", "Dorotea", "Sena"};
-        Scanner scanner = new Scanner(System.in);
+        String[] guessWords = {"elina", "dorotea", "hangman", "test"};
+        Hangman game = new Hangman(guessWords);
+        game.playGame();
+    }
 
-        while (isGameRunning) {
-            String randomWord = words[randomNumberGenerator.nextInt(words.length)];
-            boolean isGuessing = true;
-            String trueLetters = getTrueLetters(randomWord, 0);
+    private String[] words;
+    private String wordToGuess;
+    private String hiddenWord;
+    private Scanner scanner;
 
-            printWord(randomWord, trueLetters);
-            System.out.println();
+    public Hangman(String[] words) {
+        this.words = words;
+        scanner = new Scanner(System.in);
+        selectRandomWord();
+        hideWord();
+    }
 
-            while (isGuessing) {
-                System.out.print("Input: ");
-                String input = scanner.nextLine();
-                trueLetters += input.toLowerCase();
-                printWord(randomWord, trueLetters);
-                System.out.println();
-                isGuessing = isGameRunning(randomWord, trueLetters);
+    private void selectRandomWord() {
+        int index = (int) (Math.random() * words.length);
+        wordToGuess = words[index];
+    }
 
-            }
-            System.out.println("Finished Game!");
-            System.out.println("Wenn Sie weiter spielen wollen, schreiben sie: weiter. Ansonsten schreiben sie: stop");
-            String input = scanner.nextLine();
-            if (input.contains("stop")) {
-                isGameRunning = false;
+    private void hideWord() {
+        char[] chars = wordToGuess.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            chars[i] = '*';
+        }
+        hiddenWord = new String(chars);
+    }
+
+    public void playGame() {
+        while (true) {
+            System.out.println(hiddenWord);
+            System.out.println("Gib einen Buchstaben ein:");
+            char input = scanner.next().charAt(0);
+            uncoverLetter(input);
+            if ((hiddenWord) == (wordToGuess)) {
+                System.out.println("Herzlichen Glückwunsch! Du hast das Wort erraten!");
+                break;
             }
         }
     }
 
-    public static String getTrueLetters(String word, int amount) {
-        Random randomNumberGenerator = new Random();
-        String trueLetters = new String();
-        String[] letterList = word.split("");
-        for (int i = 0; i < amount; i++) {
-            trueLetters += letterList[randomNumberGenerator.nextInt(letterList.length)].toLowerCase();
-        }
-        return trueLetters;
-
-    }
-
-    public static void printWord (String word, String trueLetters) {
-        String[] word_list = word.split("");
-        for (String character : word_list) {
-            if (trueLetters.contains(character.toLowerCase())) {
-                System.out.print(character);
-            } else {
-                System.out.print("*");
-
+    private void uncoverLetter(char letter) {
+        char[] chars = hiddenWord.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] == '*' && wordToGuess.charAt(i) == letter) {
+                chars[i] = letter;
             }
         }
-    }
-
-    public static boolean isGameRunning(String word, String trueLetters) {
-        boolean gameRunning = false;
-        String[] word_list = word.split("");
-        for (String character : word_list) {
-            if (!trueLetters.contains(character.toLowerCase())) {
-                gameRunning = true;
-            }
-        }
-
-        return gameRunning;
+        hiddenWord = new String(chars);
     }
 }
