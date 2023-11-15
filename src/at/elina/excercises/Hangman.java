@@ -5,15 +5,15 @@ import java.util.Scanner;
 
 public class Hangman{
     public static void main(String[] args) {
-        String[] guessWords = {"elina", "dorotea", "Hangman", "test"};
+        String[] guessWords = {"elina", "dorotea", "hangman", "test"};
         Hangman game = new Hangman(guessWords);
         game.playGame();
     }
 
-    private String[] words;
-    private String wordToGuess;
-    private String hiddenWord;
-    private Scanner scanner;
+    public String[] words;
+    public String wordToGuess;
+    public String hiddenWord;
+    public Scanner scanner;
 
     public Hangman(String[] words) {
         this.words = words;
@@ -22,12 +22,12 @@ public class Hangman{
         hideWord();
     }
 
-    private void selectRandomWord() {
+    public void selectRandomWord() {
         int index = (int) (Math.random() * words.length);
         wordToGuess = words[index];
     }
 
-    private void hideWord() {
+    public void hideWord() {
         char[] chars = wordToGuess.toCharArray();
         for (int i = 0; i < chars.length; i++) {
             chars[i] = '*';
@@ -48,7 +48,7 @@ public class Hangman{
         }
     }
 
-    private void uncoverLetter(char letter) {
+    public void uncoverLetter(char letter) {
         char[] chars = hiddenWord.toCharArray();
         for (int i = 0; i < chars.length; i++) {
             if (chars[i] == '*' && wordToGuess.charAt(i) == letter) {
