@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Hangman{
     public static void main(String[] args) {
-        String[] guessWords = {"elina", "dorotea", "hangman", "test"};
+        String[] guessWords = {"elina", "dorotea", "Hangman", "test"};
         Hangman game = new Hangman(guessWords);
         game.playGame();
     }
