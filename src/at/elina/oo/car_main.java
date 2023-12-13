@@ -3,13 +3,13 @@ package at.elina.oo;
 public class car_main {
     public static void main(String[] args) {
         car c1 = new car(9, "Porsche", "P1234", "white", 70, 80);
-      /*  c1.color = "blue";
-        c1.brand = "Porsche";
-        c1.fuelConsumption = 9;
-        c1.serialNumber = "P1234";
-        c1.fuelAmount = 70;
-        c1.tankVolumen = 80;
-       */
+        c1.setColor("blue");
+        c1.setBrand("Porsche");
+        c1.setFuelConsumption(9);
+        c1.setSerialNumber("P1234");
+        c1.setFuelAmount(70);
+        c1.setTankVolumen(80);
+
 
         car c2 = new car(1, "Jaguar", "J1234", "pink", 3, 50);
        /* c2.color = "pink";

@@ -1,15 +1,15 @@
 package at.elina.oo;
 
 public class car {
-    public String color;
-    public int fuelConsumption;
-    public String serialNumber;
-    public String brand;
-    public int fuelAmount;
-    public int tankVolumen;
+    private String color;
+    private int fuelConsumption;
+    private String serialNumber;
+    private String brand;
+    private int fuelAmount;
+    private int tankVolumen;
 
 
-    public car(int fuelConsumption, String brand, String serialNumber, String color, int fuelAmount, int tankVolumen){
+    public car(int fuelConsumption, String brand, String serialNumber, String color, int fuelAmount, int tankVolumen) {
         this.fuelConsumption = fuelConsumption;
         this.brand = brand;
         this.serialNumber = serialNumber;
@@ -37,16 +37,40 @@ public class car {
 
     }
 
-    public void honk (int amountOfRepetitions){
+    public void honk(int amountOfRepetitions) {
         for (int i = 0; i < amountOfRepetitions; i++) {
             System.out.println("Tuuuuuuuuut");
         }
     }
 
-    public void RemainingRange(){
-        if (fuelConsumption !=0) {
+    public void RemainingRange() {
+        if (fuelConsumption != 0) {
             double remainingRange = (double) fuelAmount / fuelConsumption;
             System.out.println("Remaining Range: " + remainingRange);
         }
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setFuelAmount(int fuelAmount) {
+        this.fuelAmount = fuelAmount;
+    }
+
+    public void setFuelConsumption(int fuelConsumption) {
+        this.fuelConsumption = fuelConsumption;
+    }
+
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
+    }
+
+    public void setTankVolumen(int tankVolumen) {
+        this.tankVolumen = tankVolumen;
     }
 }
