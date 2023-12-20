@@ -1,6 +1,7 @@
 package at.elina.oo;
 
 public class car {
+    private Engine engine;
     private String color;
     private int fuelConsumption;
     private String serialNumber;
@@ -9,7 +10,8 @@ public class car {
     private int tankVolumen;
 
 
-    public car(int fuelConsumption, String brand, String serialNumber, String color, int fuelAmount, int tankVolumen) {
+    public car(Engine engine, int fuelConsumption, String brand, String serialNumber, String color, int fuelAmount, int tankVolumen) {
+        this.engine = engine;
         this.fuelConsumption = fuelConsumption;
         this.brand = brand;
         this.serialNumber = serialNumber;
