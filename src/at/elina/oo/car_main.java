@@ -12,19 +12,19 @@ public class car_main {
 
 
         car c2 = new car(1, "Jaguar", "J1234", "pink", 3, 50);
-       /* c2.color = "pink";
-        c2.brand = "Jaguar";
-        c2.fuelConsumption = 1;
-        c2.serialNumber = "J1234";
-        c2.fuelAmount = 3;
-        c2.tankVolumen = 50;
-        */
+        c2.setColor("pink");
+        c2.setBrand("Jaguar");
+        c2.setFuelConsumption(1);
+        c2.setSerialNumber("J1234");
+        c2.setFuelConsumption(3);
+        c2.setTankVolumen(50);
+
 
 
         car c3 = new car(17, "BMW", "B1234", "grey", 10, 100);
 
-        System.out.println("Seriennummer des dritten Autos: " + c3.serialNumber);
-        System.out.println("Farbe des 2ten Autos: " + c2.color);
+        System.out.println("Seriennummer des dritten Autos: " + c3.getFuelAmount());
+        System.out.println("Farbe des 2ten Autos: " + c2.getColor());
 
 
 

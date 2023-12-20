@@ -73,4 +73,28 @@ public class car {
     public void setTankVolumen(int tankVolumen) {
         this.tankVolumen = tankVolumen;
     }
+
+    public int getFuelAmount() {
+        return fuelAmount;
+    }
+
+    public int getFuelConsumption() {
+        return fuelConsumption;
+    }
+
+    public int getTankVolumen() {
+        return tankVolumen;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public String getSerialNumber() {
+        return serialNumber;
+    }
 }
