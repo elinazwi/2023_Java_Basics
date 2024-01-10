@@ -21,9 +21,10 @@ public class car {
     }
 
     //Methode
-    public void drive() {
+    public void drive(int amount) {
         this.fuelAmount = this.fuelAmount - fuelConsumption;
         System.out.println("i am driving");
+        this.engine.drive(amount);
     }
 
     public void brake() {
@@ -40,8 +41,8 @@ public class car {
     }
 
     public void honk(int amountOfRepetitions) {
-        for (int i = 0; i < amountOfRepetitions; i++) {
-            System.out.println("Tuuuuuuuuut");
+       for (int i = 0; i < amountOfRepetitions; i++) {
+            System.out.println("Ich bin ein " + this.brand + " und habe die Farbe " + this.color + " und habe " + this.getEngine().getHorsePower() + " ps.");
         }
     }
 
@@ -76,10 +77,18 @@ public class car {
         this.tankVolumen = tankVolumen;
     }
 
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
     public int getFuelAmount() {
         return fuelAmount;
     }
 
+
+    public Engine getEngine() {
+        return engine;
+    }
     public int getFuelConsumption() {
         return fuelConsumption;
     }
@@ -99,4 +108,5 @@ public class car {
     public String getSerialNumber() {
         return serialNumber;
     }
+
 }

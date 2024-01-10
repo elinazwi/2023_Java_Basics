@@ -1,7 +1,7 @@
 package at.elina.oo;
 
 public class Engine {
-    private enum TYPE (DIESEL, GAS);
+    public enum TYPE {DIESEL, GAS};
     private  int horsePower;
     private TYPE type; //Diesel oder Benzin
 
@@ -16,6 +16,10 @@ public class Engine {
 
     public int getHorsePower() {
         return horsePower;
+    }
+
+    public void setHorsePower(int horsePower) {
+        this.horsePower = horsePower;
     }
 
     public TYPE getType() {
