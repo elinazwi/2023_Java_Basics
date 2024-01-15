@@ -1,9 +1,9 @@
 package at.elina.oo;
 
-public class car_main {
+public class Main {
     public static void main(String[] args) {
         Engine e1 = new Engine(140, Engine.TYPE.DIESEL);
-        car c1 = new car(e1, 10, "Porsche", "P1234", "white", 80, 400);
+        Car c1 = new Car(e1, 10, "Porsche", "P1234", "white", 80, 400);
         c1.setColor("white");
         c1.setBrand("Porsche");
         c1.setFuelConsumption(10);
