@@ -21,10 +21,10 @@ public class Car {
     }
 
     //Methode
-    public void drive(int amount) {
+    public void drive(int amount, int speed) {
         this.fuelAmount = this.fuelAmount - fuelConsumption;
         System.out.println("i am driving");
-        this.engine.drive(amount);
+        this.engine.drive(amount, speed);
     }
 
     public void brake() {
