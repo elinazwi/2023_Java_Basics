@@ -1,13 +1,15 @@
 package at.elina.oo;
 
 public class Engine {
-    public enum TYPE {DIESEL, GAS};
+    //public enum TYPE {DIESEL, GAS};
     private  int horsePower;
-    private TYPE type; //Diesel oder Benzin
+    //private TYPE type; //Diesel oder Benzin
+    private Tank tank;
 
-    public Engine(int horsePower, TYPE type){
+    public Engine(int horsePower, Tank tank){
         this.horsePower = horsePower;
-        this.type = type;
+        //this.type = type;
+        this.tank = tank;
     }
     //amount should be between 0 and 100
     public void drive(int amount){
@@ -22,7 +24,15 @@ public class Engine {
         this.horsePower = horsePower;
     }
 
-    public TYPE getType() {
+    /*public TYPE getType() {
         return type;
+    }*/
+
+    public void setTank(Tank tank) {
+        this.tank = tank;
+    }
+
+    public Tank getTank() {
+        return tank;
     }
 }
