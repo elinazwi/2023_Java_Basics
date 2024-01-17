@@ -1,7 +1,11 @@
 package at.elina.oo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Car {
     private Engine engine;
+    private List<RearMirror> mirrors;
     private String color;
     private int fuelConsumption;
     private String serialNumber;
@@ -18,6 +22,15 @@ public class Car {
         this.color = color;
         this.fuelAmount = fuelAmount;
         this.tankVolumen = tankVolumen;
+        this.mirrors = new ArrayList<>();
+    }
+
+    public void addMirror(RearMirror rearMirror){
+        this.mirrors.add(rearMirror);
+    }
+
+    public List<RearMirror> getMirrors() {
+        return mirrors;
     }
 
     //Methode

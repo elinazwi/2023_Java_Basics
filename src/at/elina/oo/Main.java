@@ -6,6 +6,8 @@ public class Main {
 
         Tank t1 = new Tank(200, 20, "GAS");
         Engine e1 = new Engine(140, t1);
+        RearMirror r1 = new RearMirror(100, 0);
+        RearMirror r2 = new RearMirror(90, -40);
         Car c1 = new Car(e1, 10, "Porsche", "P1234", "white", 80, 400);
         c1.setColor("white");
         c1.setBrand("Porsche");
@@ -23,6 +25,10 @@ public class Main {
 
 
         System.out.println(c1.getEngine().getTank().getType());
+        c1.addMirror(r1);
+        c1.addMirror(r2);
+
+        System.out.println(c1.getMirrors().get(0).getPosition());
         c1.drive(25, 50);
     }
 }
