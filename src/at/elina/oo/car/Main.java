@@ -32,7 +32,7 @@ public class Main {
         c1.addTires(t1);
         System.out.println(c1.getTires().get(0).getDiameter());
 
-        System.out.println(c1.getMirrors().get(0).getPosition());
+        System.out.println(c1.getMirrors().get(1).getPosition());
         c1.drive(25, 50);
     }
 }
