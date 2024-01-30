@@ -1,4 +1,4 @@
-package at.elina.oo;
+package at.elina.oo.car;
 
 public class RearMirror {
     public int size;

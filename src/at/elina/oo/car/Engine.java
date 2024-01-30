@@ -1,5 +1,4 @@
-package at.elina.oo;
-import java.util.Scanner;
+package at.elina.oo.car;
 
 public class Engine {
     //public enum TYPE {DIESEL, GAS};

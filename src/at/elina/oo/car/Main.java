@@ -1,4 +1,5 @@
-package at.elina.oo;
+package at.elina.oo.car;
+
 import java.util.Scanner;
 
 public class Main {
