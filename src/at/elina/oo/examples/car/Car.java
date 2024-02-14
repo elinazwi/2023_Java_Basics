@@ -6,13 +6,21 @@ public class Car {
     public int basePrice;
     public double baseConsumption;
     public int distance;
+    public int mileage;
 
-    public Car(String color, int maximumSpeed, int basePrice, double baseConsumption, int distance){
+    public Car(String color, int maximumSpeed, int basePrice, double baseConsumption, int distance, int mileage){
         this.color = color;
         this.maximumSpeed = maximumSpeed;
         this.basePrice = basePrice;
         this.baseConsumption = baseConsumption;
         this.distance = distance;
+        this.mileage = mileage;
+    }
+
+    public void changeConsumption(){
+        if (this.mileage > 50000){
+            this.baseConsumption = baseConsumption * 1.098;
+        }
     }
 
 
@@ -46,5 +54,21 @@ public class Car {
 
     public void setBaseConsumption(double baseConsumption) {
         this.baseConsumption = baseConsumption;
+    }
+
+    public int getDistance() {
+        return distance;
+    }
+
+    public void setDistance(int distance) {
+        this.distance = distance;
+    }
+
+    public int getMileage() {
+        return mileage;
+    }
+
+    public void setMileage(int mileage) {
+        this.mileage = mileage;
     }
 }
