@@ -1,27 +1,28 @@
 package at.elina.test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TrafficController {
-    private String firstname;
-    private String lastname;
+    private List<Plane> planes;
 
-    public TrafficController(String firstname, String lastname) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+    public TrafficController(){
+        this.planes = new ArrayList<>();
     }
 
-    public String getFirstname() {
-        return firstname;
+    public void informPeopleOnAllPlanes(){
+        for (Plane planes: this.planes) {
+            planes.informPassangers();
+        }
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void printAllPlanes(){
+        for (Plane planes: this.planes) {
+            System.out.println("Flugzeugname: " + planes.getName() + " und Position: " + planes.getPosition().getLatitude() + ", " + planes.getPosition().getLongitude());
+        }
     }
 
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void addPlane(Plane plane){
+        this.planes.add(plane);
     }
 }

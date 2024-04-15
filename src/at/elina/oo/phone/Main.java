@@ -12,6 +12,6 @@ public class Main {
         file2.getInfo();
         file3.getInfo();
         file4.getInfo();
-        SDCard1.getAllFiles();
+
     }
 }
