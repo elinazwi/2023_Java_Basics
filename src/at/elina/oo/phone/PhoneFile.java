@@ -11,8 +11,8 @@ public class PhoneFile {
         this.name = name;
     }
 
-    public String getInfo(){
-        return name + "." + extension + " hat eine größe von: " + sizeInMB;
+    public void getInfo(){
+        System.out.println(name + "." + extension + " hat eine größe von: " + sizeInMB + "MB");
     }
 
     public String getExtension() {
